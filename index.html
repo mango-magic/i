@@ -1,5 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>My Awesome Site</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FounderFlow - The Voice of the Small Business Owner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: #F1ab1c;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --radius: 0.5rem;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: rgb(249 250 251); /* bg-gray-50 */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        p, li, span, div, a {
+            font-weight: 300;
+        }
+        .font-bold { font-weight: 700; }
+        .font-medium { font-weight: 500; }
+        .font-light { font-weight: 300; }
+        .accent-color { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
+        .accent-border { border-color: var(--accent); }
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, #f1ab1c 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .progress-bar-fill {
+            background-color: var(--accent);
+        }
+        /* Style for the active navigation link */
+        .nav-link.active {
+            border-bottom-color: var(--accent);
+            color: #1f2937; /* text-gray-800 */
+            font-weight: 600;
+        }
+    </style>
 </head>
+<body class="text-gray-900">
+
+    <header class="relative bg-gradient-to-r from-yellow-50 via-yellow-50/50 to-transparent border-b border-yellow-200 overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 py-12 relative">
+            <div class="flex flex-wrap items-center justify-between mb-8 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-white rounded-full p-2 shadow-lg flex-shrink-0">
+                        <img src="https://placehold.co/48x48/f1ab1c/ffffff?text=F" alt="FounderFlow Logo" class="w-full h-full object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h1 class="text-5xl font-bold text-gray-900 mb-2">FounderFlow</h1>
+                        <p class="accent-color font-medium">The Authentic Voice of Small Business</p>
+                    </div>
+                </div>
+                <a href="#customer-voice" class="accent-bg hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-bold py-3 px-6 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Meet The Founder
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <h2 class="text-2xl font-light text-gray-700 mb-6 max-w-4xl mx-auto">
+                    Unveiling the authentic voice of the American small business owner—the frustrations, aspirations, and the relentless drive to succeed against the odds.
+                </h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-md font-medium">Bootstrap Mentality</div>
+                    <div class="bg-red-100 text-red-800 px-4 py-2 rounded-md font-medium">Distrusts Big Tech</div>
+                    <div class="bg-green-100 text-green-800 px-4 py-2 rounded-md font-medium">Community Focused</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="grid w-full grid-cols-2 md:grid-cols-5 h-14">
+                <button data-target="overview" class="nav-link flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-yellow-400 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    Profile Overview
+                </button>
+                <button data-target="customer-voice" class="nav-link flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-yellow-400 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Founder's Mindset
+                </button>
+                <button data-target="strategy" class="nav-link flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-yellow-400 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.94.39 2.5 2.5 0 0 1-.56-5.39V4.5A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v15a2.5 2.5 0 0 1-4.94.39 2.5 2.5 0 0 1-.56-5.39V4.5A2.5 2.5 0 0 1 14.5 2Z"/></svg>
+                    Market Solutions
+                </button>
+                <button data-target="timeline" class="nav-link flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-yellow-400 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    Historical Context
+                </button>
+                <button data-target="metrics" class="nav-link flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-yellow-400 transition-all duration-300 col-span-2 md:col-span-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg>
+                    Success Metrics
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <section id="overview" class="page-section space-y-12 mb-16">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 border-2 border-yellow-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg bg-white p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">The Customer's Core Mission</h3>
+                            <p class="text-gray-500 font-light">What they are building towards</p>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-700 font-light leading-relaxed">
+                        To build a thriving business that provides <span class="font-bold accent-color">financial freedom and work-life balance</span>. They aim to solve real problems for society through ethical persistence and innovation, creating a legacy of value while maintaining control over their time and principles.
+                    </p>
+                </div>
+
+                <div class="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg bg-white p-6">
+                    <h3 class="text-xl font-bold mb-4">Quick Stats</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between"><span class="text-gray-600 font-light">Primary Audience</span><span class="font-bold">35-55+ years</span></div>
+                        <div class="flex items-center justify-between"><span class="text-gray-600 font-light">Annual Income</span><span class="font-bold accent-color">&lt; $100K</span></div>
+                        <div class="flex items-center justify-between"><span class="text-gray-600 font-light">Key Markets</span><span class="font-bold">USA</span></div>
+                        <div class="flex items-center justify-between"><span class="text-gray-600 font-light">Core Value</span><span class="font-bold text-green-600">Self-Reliance</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border-2 bg-red-50 border-red-200 text-red-800 hover:scale-105 transition-all duration-300 cursor-pointer rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+                    <h4 class="font-bold text-gray-900 mb-2">Bootstrap Mentality</h4><p class="text-sm font-light">Success is earned through hard work, risk, and innovation, not luck.</p>
+                </div>
+                <div class="border-2 bg-blue-50 border-blue-200 text-blue-800 hover:scale-105 transition-all duration-300 cursor-pointer rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+                    <h4 class="font-bold text-gray-900 mb-2">Systemic Distrust</h4><p class="text-sm font-light">Blames high costs and failure on Big Tech monopolies and government overreach.</p>
+                </div>
+                <div class="border-2 bg-green-50 border-green-200 text-green-800 hover:scale-105 transition-all duration-300 cursor-pointer rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+                    <h4 class="font-bold text-gray-900 mb-2">Aspiration for Freedom</h4><p class="text-sm font-light">Prioritizes control over time and values—true success isn't just about money.</p>
+                </div>
+                <div class="border-2 bg-purple-50 border-purple-200 text-purple-800 hover:scale-105 transition-all duration-300 cursor-pointer rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></div>
+                    <h4 class="font-bold text-gray-900 mb-2">Community & Values</h4><p class="text-sm font-light">Emphasizes family, local support, ethical practices, and community networking.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="customer-voice" class="page-section space-y-12 mb-16 hidden">
+            <h2 class="text-3xl font-bold text-center">The Founder's Mindset</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="border-2 border-yellow-200 shadow-xl rounded-lg bg-white p-6">
+                     <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <h3 class="text-2xl font-bold">Founder Profile</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><h4 class="font-bold text-gray-900 mb-2">Demographics</h4><ul class="text-sm text-gray-600 font-light space-y-1"><li>• Age: 35-55+</li><li>• Income: < $100K Annually</li><li>• Gender: 59% Men, 41% Women</li><li>• Location: USA (Urban/Suburban)</li></ul></div>
+                            <div><h4 class="font-bold text-gray-900 mb-2">Psychographics</h4><ul class="text-sm text-gray-600 font-light space-y-1"><li>• Conservative/Libertarian</li><li>• Values Self-Reliance</li><li>• Distrusts Big Government</li><li>• Strong Community Focus</li></ul></div>
+                        </div>
+                        <div><h4 class="font-bold text-gray-900 mb-2">Core Philosophy</h4><p class="text-gray-600 font-light italic">"Hard work and ethical persistence define success. Life is about solving problems for society while building personal freedom. Failures are learning steps, and mindset trumps luck."</p></div>
+                    </div>
+                </div>
+                <div class="shadow-xl rounded-lg bg-white p-6">
+                    <h3 class="text-2xl font-bold mb-4">Pains, Beliefs & Blame</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mt-0.5 text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg><p class="text-gray-700 font-light">"I entered into a contract with a marketing company which has been absolutely awful. They've had no communication..."</p></div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mt-0.5 text-red-500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><p class="text-gray-700 font-light">Believes Big Tech acquisitions are "killer moves" that shield them from competition and hurt small businesses.</p></div>
+                         <div class="flex items-start gap-3 p-3 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mt-0.5 text-yellow-500"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><p class="text-gray-700 font-light">Feels that high customer acquisition cost (CAC) is caused by monopolies, regulations, and digital saturation.</p></div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mt-0.5 text-green-500"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><p class="text-gray-700 font-light">Aspires to be an innovative leader, not just a "technician" caught in the daily grind.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="page-section space-y-12 mb-16 hidden">
+            <h2 class="text-3xl font-bold text-center">Market Landscape & Solutions</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg bg-white p-6">
+                    <div class="flex items-center gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><h3 class="text-xl font-bold">Current Solutions</h3></div>
+                    <div class="space-y-3"><div class="p-3 bg-red-50 rounded-lg"><h4 class="font-bold text-red-900 mb-1">Marketing Agencies</h4><p class="text-sm text-red-700 font-light">Often a source of frustration due to high costs, poor communication, and lack of ROI.</p></div><div class="p-3 bg-green-50 rounded-lg"><h4 class="font-bold text-green-900 mb-1">DIY Tools & Freelancers</h4><p class="text-sm text-green-700 font-light">A rising alternative to cut costs and maintain control, using platforms like Canva or hiring specialists.</p></div><div class="p-3 bg-blue-50 rounded-lg"><h4 class="font-bold text-blue-900 mb-1">Referrals & Organic</h4><p class="text-sm text-blue-700 font-light">Highly popular due to low CAC; leverages community trust and user-generated content (UGC).</p></div></div>
+                </div>
+                <div class="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg bg-white p-6">
+                    <h3 class="text-xl font-bold mb-4">How to Build Trust</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3"><div class="w-8 h-8 accent-bg text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div><div><h4 class="font-bold text-gray-900">Avoid Generic Pitches</h4><p class="text-sm text-gray-600 font-light">They hate "jacks of all trades." Offer specialized, tailored strategies that show you understand their niche.</p></div></div>
+                        <div class="flex items-start gap-3"><div class="w-8 h-8 accent-bg text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div><div><h4 class="font-bold text-gray-900">Focus on Measurable ROI</h4><p class="text-sm text-gray-600 font-light">Demonstrate value with data-driven insights. Reducing CAC is a highly effective way to gain trust.</p></div></div>
+                        <div class="flex items-start gap-3"><div class="w-8 h-8 accent-bg text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div><div><h4 class="font-bold text-gray-900">Provide Proof & Quality</h4><p class="text-sm text-gray-600 font-light">Use testimonials and case studies. They are warned: "You CANNOT have all three: cheap, fast, quality."</p></div></div>
+                    </div>
+                </div>
+                <div class="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg bg-white p-6">
+                    <h3 class="text-xl font-bold mb-4">Content That Resonates</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border border-gray-200 rounded-lg hover:accent-border transition-colors"><h4 class="font-bold text-gray-900 text-sm">Systemic Critiques</h4><p class="text-xs text-gray-600 font-light">Articles on how Big Tech/regulations hurt small biz.</p></div>
+                        <div class="p-3 border border-gray-200 rounded-lg hover:accent-border transition-colors"><h4 class="font-bold text-gray-900 text-sm">Actionable "Smarter Growth"</h4><p class="text-xs text-gray-600 font-light">Guides on lowering CAC & leveraging community.</p></div>
+                        <div class="p-3 border border-gray-200 rounded-lg hover:accent-border transition-colors"><h4 class="font-bold text-gray-900 text-sm">Success Stories</h4><p class="text-xs text-gray-600 font-light">Case studies of founders achieving work-life balance.</p></div>
+                        <div class="p-3 border border-gray-200 rounded-lg hover:accent-border transition-colors"><h4 class="font-bold text-gray-900 text-sm">Authentic Failure Reports</h4><p class="text-xs text-gray-600 font-light">Honest tales of overcoming common startup struggles.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="page-section space-y-8 mb-16 hidden">
+            <div class="text-center mb-12"><h2 class="text-4xl font-bold text-gray-900 mb-4">The Evolving Struggle: A Historical View</h2><p class="text-lg text-gray-600 font-light">How the founder's pain has changed over time</p></div>
+            <div class="space-y-8">
+                <div class="bg-white shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg border-l-4 border-l-green-500 p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full flex items-center justify-center bg-green-100 text-green-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div><div><h3 class="text-xl font-bold">The "Golden Age" (Pre-1990s)</h3><p class="text-gray-500 capitalize font-light">Past Era</p></div></div>
+                        <div class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Historical</div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-sm text-gray-700 font-light">Marketing was local and direct (print, radio, trade).</span></div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-sm text-gray-700 font-light">Less competition and digital "noise."</span></div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg border-l-4 accent-border p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-100 accent-color"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div><div><h3 class="text-xl font-bold">Digital Disruption (1990s-2010s)</h3><p class="text-gray-500 capitalize font-light">The Great Shift</p></div></div>
+                        <div class="bg-yellow-100 accent-color text-sm font-medium px-3 py-1 rounded-full">Historical</div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-sm text-gray-700 font-light">The Internet created new opportunities (SEO, keywords).</span></div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-sm text-gray-700 font-light">Traditional methods began to decline in efficiency.</span></div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg border-l-4 border-l-red-500 p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full flex items-center justify-center bg-red-100 text-red-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div><div><h3 class="text-xl font-bold">Age of Monopolies (Present)</h3><p class="text-gray-500 capitalize font-light">Current Struggle</p></div></div>
+                        <div class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">Ongoing</div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path></svg><span class="text-sm text-gray-700 font-light">Pain worsened by Big Tech gatekeepers and algorithm changes.</span></div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path></svg><span class="text-sm text-gray-700 font-light">"Trust in businesses is eroding. Marketing is getting expensive."</span></div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path></svg><span class="text-sm text-gray-700 font-light">CAC has skyrocketed due to saturation and privacy rules.</span></div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path></svg><span class="text-sm text-gray-700 font-light">A belief that innovative solutions are suppressed or acquired.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics" class="page-section space-y-12 mb-16 hidden">
+            <div class="text-center mb-12"><h2 class="text-4xl font-bold text-gray-900 mb-4">What Success Looks Like (To Them)</h2><p class="text-lg text-gray-600 font-light">How they measure their own progress and wins</p></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border-2 bg-blue-50 border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg><h3 class="text-xl font-bold">Business Growth</h3></div>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Lower Customer Acq. Cost</span><span class="text-sm text-gray-500">Goal: -25%</span></div><div class="w-full bg-blue-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 60%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Higher Conversion Rates</span><span class="text-sm text-gray-500">Goal: +15%</span></div><div class="w-full bg-blue-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 75%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Annual Revenue Growth</span><span class="text-sm text-gray-500">Goal: >$100K</span></div><div class="w-full bg-blue-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Positive Cash Flow</span><span class="text-sm text-gray-500">Goal: Consistent</span></div><div class="w-full bg-blue-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 90%"></div></div></div>
+                    </div>
+                </div>
+                <div class="border-2 bg-green-50 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><h3 class="text-xl font-bold">Personal Freedom</h3></div>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Work-Life Balance</span><span class="text-sm text-gray-500">Goal: Time w/ Family</span></div><div class="w-full bg-green-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 65%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Control Over Time</span><span class="text-sm text-gray-500">Goal: Full Autonomy</span></div><div class="w-full bg-green-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 85%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Less "Technician" Work</span><span class="text-sm text-gray-500">Goal: Be a Visionary</span></div><div class="w-full bg-green-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 50%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Financial Security</span><span class="text-sm text-gray-500">Goal: Self-Made</span></div><div class="w-full bg-green-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 78%"></div></div></div>
+                    </div>
+                </div>
+                <div class="border-2 bg-purple-50 border-purple-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-color"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg><h3 class="text-xl font-bold">Impact & Legacy</h3></div>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Community Support</span><span class="text-sm text-gray-500">Goal: Buy/Hire Local</span></div><div class="w-full bg-purple-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 92%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Ethical Reputation</span><span class="text-sm text-gray-500">Goal: High Integrity</span></div><div class="w-full bg-purple-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 95%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Customer Satisfaction</span><span class="text-sm text-gray-500">Goal: Provide Value</span></div><div class="w-full bg-purple-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 88%"></div></div></div>
+                        <div><div class="flex justify-between items-center"><span class="text-sm font-medium text-gray-700">Building a Legacy</span><span class="text-sm text-gray-500">Goal: Lasting Impact</span></div><div class="w-full bg-purple-200 rounded-full h-2 mt-2"><div class="progress-bar-fill h-2 rounded-full" style="width: 70%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#" class="fixed bottom-6 right-6 z-50 accent-bg hover:opacity-90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 rounded-full px-6 py-3 flex items-center gap-3 font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Unlock Founder Insights
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+
+    <script>
+        // This script handles the tab-like functionality for the navigation.
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.page-section');
+
+            // Function to switch tabs
+            function switchTab(targetId) {
+                // Hide all sections first
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Remove active class from all nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Show the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+
+                // Add active class to the clicked nav link
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Add click event listeners to all nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    const targetId = link.getAttribute('data-target');
+                    switchTab(targetId);
+                });
+            });
+
+            // Set the initial state to show the 'Overview' tab
+            switchTab('overview');
+        });
+    </script>
+
+</body>
+</html>
